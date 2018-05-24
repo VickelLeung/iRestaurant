@@ -8,10 +8,10 @@
     tools:context="com.example.vicke.irestaurant.RegisterActivity">
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/etRegUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText5"
+        android:layout_above="@+id/etRegPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:ems="10"
@@ -21,24 +21,25 @@
         android:textColorHint="#ffff" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/etRegPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText8"
-        android:layout_alignStart="@+id/editText4"
+        android:layout_above="@+id/etRegPhone"
+        android:layout_alignStart="@+id/etRegUsername"
         android:layout_marginBottom="24dp"
         android:ems="10"
+        android:inputType="textPassword"
         android:hint="Password"
         android:drawableLeft="@drawable/ic_action_pass"
         android:textColor="#ffff"
         android:textColorHint="#ffff" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/etRegEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button"
-        android:layout_alignStart="@+id/editText5"
+        android:layout_above="@+id/btnRegister"
+        android:layout_alignStart="@+id/etRegPassword"
         android:layout_marginBottom="37dp"
         android:ems="10"
         android:hint="Email Address"
@@ -47,10 +48,10 @@
         android:textColorHint="#ffff" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/etRegPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editText7"
+        android:layout_alignStart="@+id/etRegEmail"
         android:layout_centerVertical="true"
         android:ems="10"
         android:hint="Phone"
@@ -60,7 +61,7 @@
         android:textColorHint="#ffff" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -75,7 +76,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
-        android:text="@string/register"
+        android:text="@string/registerPage"
         android:textColor="#ffff"
         android:textSize="26sp"
         android:textStyle="bold" />

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.vicke.irestaurant">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +21,9 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".foodActivity" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ForgotActivity" />
+        <activity android:name=".FoodListActivity"></activity>
     </application>
 
 </manifest>
