@@ -23,7 +23,9 @@
         <activity android:name=".MenuActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ForgotActivity" />
-        <activity android:name=".FoodListActivity"></activity>
+        <activity android:name=".FoodListActivity" />
+        <activity android:name=".listDataActivity" />
+        <activity android:name=".NavigationActivity"></activity>
     </application>
 
 </manifest>

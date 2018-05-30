@@ -9,8 +9,11 @@
     tools:context="com.example.vicke.irestaurant.FoodListActivity">
 
     <ListView
-        android:id="@+id/list_view"
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content">
+
+    </ListView>
+
 
 </RelativeLayout>

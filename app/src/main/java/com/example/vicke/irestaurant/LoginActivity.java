@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Button btnLogin;
+    private Button btnLogin, goTemp;
     private TextView tvRegister, tvForgot;
     private EditText etEmail, etPassword;
     private ProgressDialog progressDialog;
@@ -37,6 +37,18 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = (EditText) findViewById(R.id.etPassword);
         progressDialog = new ProgressDialog(this);
         firebaseAuth = FirebaseAuth.getInstance();
+
+
+//        To be delete
+            goTemp = (Button) findViewById(R.id.goTemp);
+
+            goTemp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent menuIntent = new Intent(LoginActivity.this, NavigationActivity.class);
+                    startActivity(menuIntent);
+                }
+            });
 
         if(firebaseAuth.getCurrentUser() != null){
             //start profile activity...
@@ -98,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, "Login sucessful", Toast.LENGTH_SHORT).show();
                             //start profile
                             finish();
-                            Intent menuIntent = new Intent(LoginActivity.this, MenuActivity.class);
+                            Intent menuIntent = new Intent(LoginActivity.this, NavigationActivity.class);
                             startActivity(menuIntent);
                         }
                         else

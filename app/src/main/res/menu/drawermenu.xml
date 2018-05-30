@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/drawRecipee" android:title="Recipees"/>
+    <item android:id="@+id/drawRecommend" android:title="Recommend"/>
+    <item android:id="@+id/drawChat" android:title="Group chat"/>
+    <item android:id="@+id/drawProfile" android:title="Profile"/>
+    <item android:id="@+id/drawSetting" android:title="Setting"/>
+    <!--<item android:id="@+id/drawLogout" android:title="Logout"/>-->
+</menu>

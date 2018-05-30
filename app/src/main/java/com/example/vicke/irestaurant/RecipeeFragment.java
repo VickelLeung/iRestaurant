@@ -1,22 +1,31 @@
 package com.example.vicke.irestaurant;
 
-import android.content.Intent;
+
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
+import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.Toast;
+
 import java.util.ArrayList;
 
-public class FoodListActivity extends AppCompatActivity {
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class RecipeeFragment extends Fragment {
+
+    private ListView listView;
+
+    public RecipeeFragment() {
+        // Required empty public constructor
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_list);
-
-        final ListView listView = (ListView) findViewById(R.id.list_view);
 
         final ArrayList<Object> list = new ArrayList<>();
 
@@ -49,26 +58,33 @@ public class FoodListActivity extends AppCompatActivity {
 //        list.add(new RecipeeItem("won ton", "A soup with beef dumpling wrapped", R.drawable.ic_action_user));
 //        list.add(new RecipeeItem("won ton", "A soup with beef dumpling wrapped", R.drawable.ic_action_user));
 
-        listView.setAdapter(new RecipeeAdapter(this, list));
+//        listView.setAdapter(new RecipeeAdapter(this.getContext(),list));
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-//                if(list.get(position).getClass().toString() != "Chinese" ) {
-                    Toast.makeText(FoodListActivity.this, "clicked " + list.get(position).toString(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(FoodListActivity.this, "clicked " + list.get(position).toString(), Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(FoodListActivity.this, listDataActivity.class);
-                    Bundle data = new Bundle();
-                    data.putSerializable("list", list);
-                    intent.putExtra("position", position);
-                    intent.putExtras(data);
-                    startActivity(intent);
-//                }
-
-            }
-        });
+//                Intent intent = new Intent(getContext(), listDataActivity.class);
+//                Bundle data = new Bundle();
+//                data.putSerializable("list", list);
+//                intent.putExtra("position", position);
+//                intent.putExtras(data);
+//                startActivity(intent);
 
 
+//            }
+//        });
     }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+       listView = (ListView) getView().findViewById(R.id.list_view);
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_recipee, container, false);
+    }
+
 }

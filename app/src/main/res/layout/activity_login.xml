@@ -77,4 +77,13 @@
         android:text="@string/register"
         android:textColor="#ffff"
         android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/goTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="73dp"
+        android:text="Button" />
 </RelativeLayout>

@@ -8,9 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.vicke.irestaurant.R;
-import com.example.vicke.irestaurant.RecipeeItem;
-
 import java.util.ArrayList;
 
 public class RecipeeAdapter extends BaseAdapter{
@@ -20,8 +17,8 @@ public class RecipeeAdapter extends BaseAdapter{
     private static final int header = 1;
     private LayoutInflater inflater;
 
+    //ctor
     public RecipeeAdapter(Context context, ArrayList<Object> list){
-
         this.list = list;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -29,8 +26,10 @@ public class RecipeeAdapter extends BaseAdapter{
     @Override
     public int getItemViewType(int position) {
 
+        //check if it is an instance of RecipeeItem
         if(list.get(position) instanceof RecipeeItem)
             return recipeeItem;
+        //if not instance then must be header
         else
             return header;
     }
@@ -55,6 +54,7 @@ public class RecipeeAdapter extends BaseAdapter{
         return position;
     }
 
+    //will set the view and return it
     @Override
     public View getView(int position, View view, ViewGroup parent) {
         if(view == null){
@@ -65,7 +65,6 @@ public class RecipeeAdapter extends BaseAdapter{
                 case header:
                     view = inflater.inflate(R.layout.item_listview_header,null);
                     break;
-
             }
         }
         switch(getItemViewType(position)){
@@ -77,18 +76,13 @@ public class RecipeeAdapter extends BaseAdapter{
                 image.setImageResource(((RecipeeItem)list.get(position)).getImg());
                 name.setText(((RecipeeItem)list.get(position)).getName());
                 desc.setText(((RecipeeItem) list.get(position)).getDesc());
-
                 break;
             case header:
 
                 TextView title = (TextView) view.findViewById(R.id.itemListViewHeader);
-
                 title.setText((String)list.get(position));
-
                 break;
-
         }
-
         return view;
     }
 }
