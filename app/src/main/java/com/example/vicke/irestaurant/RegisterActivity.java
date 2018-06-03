@@ -116,6 +116,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         User user = new User(username,password,email,phone);
 
         FirebaseUser fbUser = firebaseAuth.getCurrentUser();
+        databaseReference.getParent();
         databaseReference.child(fbUser.getUid()).setValue(user);
 
     }

@@ -25,6 +25,7 @@
         android:layout_alignParentTop="true"
         android:paddingBottom="10dp"
         android:text="Name"
+        android:textColor="#ffff"
         android:textSize="22sp"
         android:textStyle="bold" />
 
@@ -37,8 +38,9 @@
         android:layout_marginRight="55dp"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@+id/itemListViewImg"
-        android:padding="10dp"
+        android:padding="15dp"
         android:text="hi"
+        android:textColor="#ffff"
         android:textAlignment="center"
         android:textSize="18sp" />
 

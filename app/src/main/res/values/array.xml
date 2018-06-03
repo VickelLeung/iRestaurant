@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array
+        name="food">
+        <item>general tso chicken</item>
+        <item>pad thai</item>
+        <item>fried rice</item>
+        <item>rice ball</item>
+    </string-array>
+
+</resources>

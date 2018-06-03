@@ -19,12 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".foodActivity" />
-        <activity android:name=".MenuActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ForgotActivity" />
-        <activity android:name=".FoodListActivity" />
-        <activity android:name=".listDataActivity" />
+        <activity android:name=".listDataActivity" android:parentActivityName=".NavigationActivity" />
         <activity android:name=".NavigationActivity"></activity>
     </application>
 

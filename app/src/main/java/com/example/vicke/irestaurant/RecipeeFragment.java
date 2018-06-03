@@ -1,13 +1,15 @@
 package com.example.vicke.irestaurant;
 
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,13 +21,22 @@ public class RecipeeFragment extends Fragment {
 
     private ListView listView;
 
+
     public RecipeeFragment() {
         // Required empty public constructor
     }
 
+
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+
+        // Inflate the layout for this fragment
+        View rootView =  inflater.inflate(R.layout.fragment_recipee, container, false);
+
+        listView = (ListView) rootView.findViewById(R.id.list_view);
+
 
         final ArrayList<Object> list = new ArrayList<>();
 
@@ -47,44 +58,26 @@ public class RecipeeFragment extends Fragment {
         list.add(new RecipeeItem("Pepper steak", "consists of sliced steak, green bell peppers, tomatoes, and white or green onions stir-fried " +
                 "with salt, sugar, and soy sauce.",steps.get(1), R.drawable.ic_action_user));
         list.add(new RecipeeItem("Chow mein", "Cantonese style chow mein contains deep-fried crunchy golden egg noodles,",steps.get(2), R.drawable.ic_action_user));
-//        list.add(new RecipeeItem("Sweet & Sour pork", "Cantonese style chow mein contains deep-fried crunchy golden egg noodles,", steps[2] , R.drawable.ic_action_user));
-//        list.add(new RecipeeItem("Ma po tofu", "Ma po tofu is one of the most famous dishes in Chuan Cuisine with a history of more than 100 years. Ma " +
-//                "describes a spicy and hot taste which comes from pepper powder", R.drawable.ic_action_user));
-//        list.add(new RecipeeItem("won ton", "A soup with beef dumpling wrapped", R.drawable.ic_action_user));
-//
-//
-//        list.add(new String("European"));
-//        list.add(new RecipeeItem("won ton", "A soup with beef dumpling wrapped", R.drawable.ic_action_user));
-//        list.add(new RecipeeItem("won ton", "A soup with beef dumpling wrapped", R.drawable.ic_action_user));
-//        list.add(new RecipeeItem("won ton", "A soup with beef dumpling wrapped", R.drawable.ic_action_user));
 
-//        listView.setAdapter(new RecipeeAdapter(this.getContext(),list));
+        listView.setAdapter(new RecipeeAdapter(getActivity(), list));
 
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-//                Toast.makeText(FoodListActivity.this, "clicked " + list.get(position).toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "clicked " + list.get(position).toString(), Toast.LENGTH_SHORT).show();
 
-//                Intent intent = new Intent(getContext(), listDataActivity.class);
-//                Bundle data = new Bundle();
-//                data.putSerializable("list", list);
-//                intent.putExtra("position", position);
-//                intent.putExtras(data);
-//                startActivity(intent);
+                Intent intent = new Intent(getContext(), listDataActivity.class);
+                Bundle data = new Bundle();
+                data.putSerializable("list", list);
+                intent.putExtra("position", position);
+                intent.putExtras(data);
+                startActivity(intent);
+
+            }
+        });
 
 
-//            }
-//        });
+        return rootView;
     }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-       listView = (ListView) getView().findViewById(R.id.list_view);
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recipee, container, false);
-    }
-
 }

@@ -21,6 +21,9 @@ public class listDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_data);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Bundle bundleObj = getIntent().getExtras();
         list = (ArrayList<RecipeeItem>)bundleObj.getSerializable("list");
         position = (int) bundleObj.getSerializable("position");
@@ -40,4 +43,18 @@ public class listDataActivity extends AppCompatActivity {
         desc.setText(list.get(position).getDesc());
 
     }
+
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+////        Intent myIntent = new Intent(getApplicationContext(), RecipeeFragment.class);
+////        startActivityForResult(myIntent, 0);
+//
+//        int id = item.getItemId();
+//        if(id == R.id.home){
+//            this.finish();
+//        }
+//
+//        return true;
+//
+//    }
 }
