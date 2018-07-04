@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/drawHome" android:title="Home"/>
-    <item android:id="@+id/drawRecipee" android:title="Recipees"/>
-    <item android:id="@+id/drawRecommend" android:title="Recommend"/>
+    <item android:id="@+id/drawHome" android:title="Home" android:icon="@drawable/ic_action_home"/>
+    <item android:id="@+id/drawRecipee" android:title="Recipees" android:icon="@drawable/ic_action_recipee"/>
+    <item android:id="@+id/drawRecommend" android:title="Recommend" android:icon="@drawable/ic_action_recommend"/>
+    <item android:id="@+id/drawExplore" android:title="Explore food" android:icon="@drawable/ic_action_explore"/>
     <item android:id="@+id/drawChat" android:title="Group chat"/>
-    <item android:id="@+id/drawProfile" android:title="Profile"/>
-    <item android:id="@+id/drawSetting" android:title="Setting"/>
+    <item android:id="@+id/drawProfile" android:title="Profile" android:icon="@drawable/ic_action_user"/>
+    <item android:id="@+id/drawSetting" android:title="Setting" android:icon="@drawable/ic_action_setting"/>
+    <item android:id="@+id/drawLogout" android:title="Logout" android:icon="@drawable/ic_action_logout"></item>
     <!--<item android:id="@+id/drawLogout" android:title="Logout"/>-->
 </menu>

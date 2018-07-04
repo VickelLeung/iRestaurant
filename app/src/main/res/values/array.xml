@@ -7,6 +7,18 @@
         <item>pad thai</item>
         <item>fried rice</item>
         <item>rice ball</item>
+        <item>Sour pork</item>
+        <item>Chow mein</item>
+        <item>dumpling</item>
     </string-array>
 
+    <array name="img">
+        <item>@drawable/chowmein</item>
+        <item>@drawable/foodlogo</item>
+        <item>@drawable/ic_action_user</item>
+        <item>@drawable/chowmein</item>
+        <item>@drawable/foodlogo</item>
+        <item>@drawable/ic_action_user</item>
+        <item>@drawable/chowmein</item>
+    </array>
 </resources>

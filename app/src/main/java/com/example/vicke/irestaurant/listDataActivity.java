@@ -17,6 +17,12 @@ public class listDataActivity extends AppCompatActivity {
     private int position;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Toast.makeText(this, "back pressed", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_data);
@@ -41,6 +47,7 @@ public class listDataActivity extends AppCompatActivity {
         steps.setText(list.get(position).getSteps());
         img.setImageResource(list.get(position).getImg());
         desc.setText(list.get(position).getDesc());
+
 
     }
 

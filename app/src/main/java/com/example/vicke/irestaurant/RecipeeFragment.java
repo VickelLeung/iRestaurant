@@ -21,11 +21,9 @@ public class RecipeeFragment extends Fragment {
 
     private ListView listView;
 
-
     public RecipeeFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,24 +57,29 @@ public class RecipeeFragment extends Fragment {
                 "with salt, sugar, and soy sauce.",steps.get(1), R.drawable.ic_action_user));
         list.add(new RecipeeItem("Chow mein", "Cantonese style chow mein contains deep-fried crunchy golden egg noodles,",steps.get(2), R.drawable.ic_action_user));
 
+        list.add(new String("American"));
+        list.add(new RecipeeItem("Classic cheeseburger", "A nice homemade cheeseburger, good for bbq",steps.get(2), R.drawable.ic_action_user));
+
         listView.setAdapter(new RecipeeAdapter(getActivity(), list));
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Toast.makeText(getActivity(), "clicked " + list.get(position).toString(), Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(getContext(), listDataActivity.class);
-                Bundle data = new Bundle();
-                data.putSerializable("list", list);
-                intent.putExtra("position", position);
-                intent.putExtras(data);
-                startActivity(intent);
-
+                if(""+list.get(position) == "Chinese")
+                    Toast.makeText(getActivity(), "do nothing", Toast.LENGTH_SHORT).show();
+                else{
+                    Toast.makeText(getActivity(), "clicked " + list.get(position).toString(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), listDataActivity.class);
+                    Bundle data = new Bundle();
+                    data.putSerializable("list", list);
+                    intent.putExtra("position", position);
+                    intent.putExtras(data);
+                    startActivity(intent);
+                }
             }
-        });
 
+
+        });
 
         return rootView;
     }

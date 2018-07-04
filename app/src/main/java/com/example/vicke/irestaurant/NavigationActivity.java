@@ -75,7 +75,21 @@ public class NavigationActivity extends AppCompatActivity {
                        drawerLayout.closeDrawers();
                        break;
 
+                   case R.id.drawExplore:
+                       fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                       fragmentTransaction.replace(R.id.mainContainer, new ExploreFragment());
+                       fragmentTransaction.commit();
+                       getSupportActionBar().setTitle("Explore tab");
+                       drawerLayout.closeDrawers();
+                       break;
 
+//                   case R.id.drawChat:
+//                       fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//                       fragmentTransaction.replace(R.id.mainContainer, new SwipeFragment());
+//                       fragmentTransaction.commit();
+//                       getSupportActionBar().setTitle("chat tab");
+//                       drawerLayout.closeDrawers();
+//                       break;
                }
 
                return false;

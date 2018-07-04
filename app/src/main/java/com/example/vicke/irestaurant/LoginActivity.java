@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -45,8 +46,11 @@ public class LoginActivity extends AppCompatActivity {
             goTemp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent menuIntent = new Intent(LoginActivity.this, NavigationActivity.class);
-                    startActivity(menuIntent);
+//                    Intent menuIntent = new Intent(LoginActivity.this, NavigationActivity.class);
+//                    startActivity(menuIntent);
+                    Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
+                    startActivity(intent);
+
                 }
             });
 

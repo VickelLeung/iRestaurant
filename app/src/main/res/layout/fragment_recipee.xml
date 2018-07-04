@@ -8,9 +8,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Recipee"
         android:textStyle="bold"
         android:textSize="45dp"
+        android:background="@color/fbutton_color_clouds"
         />
 
 

@@ -15,11 +15,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:wheel_arrow_color="@android:color/black"
+            app:wheel_arrow_color="@android:color/white"
             app:wheel_colors="@array/rainbow_dash"
-            app:wheel_items="@array/dummy"
             app:wheel_text_size="25dp"
-            app:wheel_stroke_color="@android:color/black"
+            app:wheel_stroke_color="@android:color/white"
             app:wheel_stroke_width="5dp"/>
 
         <TextView
@@ -38,6 +37,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:background="@drawable/buttostyle"
+            android:textColor="@color/white"
+            android:layout_margin="2dp"
             android:text="Get recommendation!" />
 
         <!--<ImageView-->
